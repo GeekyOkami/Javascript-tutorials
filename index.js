@@ -1,15 +1,19 @@
-let a;
-let b;
-let c;
+let count=0;
 
-document.getElementById("submitbutton").onclick=function(){
-    a=document.getElementById("textboxA").value;
-    Number(a);
-    b=document.getElementById("textboxB").value;
-    Number(b);
+document.getElementById("decrease").onclick=function(){
+    count-=1;
+    Number(count);
+    document.getElementById("mainscreen").innerHTML=count;
+}
 
-    c=Math.sqrt(Math.pow(a,2)+Math.pow(b,2));
+document.getElementById("reset").onclick=function(){
+    count=0;
+    Number(count);
+    document.getElementById("mainscreen").innerHTML=count;
+}
 
-    document.getElementById("labelC").innerHTML= "Side C:"+c;
-
+document.getElementById("increase").onclick=function(){
+    count+=1;
+    Number(count);
+    document.getElementById("mainscreen").innerHTML=count;
 }
