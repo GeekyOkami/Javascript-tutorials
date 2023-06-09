@@ -1,19 +1,19 @@
-let count=0;
+const ans=Math.floor((Math.random()*10)+1);
 
-document.getElementById("decrease").onclick=function(){
-    count-=1;
-    Number(count);
-    document.getElementById("mainscreen").innerHTML=count;
-}
+let guesses=0;
 
-document.getElementById("reset").onclick=function(){
-    count=0;
-    Number(count);
-    document.getElementById("mainscreen").innerHTML=count;
-}
+document.getElementById("submitbtn").onclick=function(){
+    let guess=document.getElementById("guessbox").value;
+    guesses+=1;
 
-document.getElementById("increase").onclick=function(){
-    count+=1;
-    Number(count);
-    document.getElementById("mainscreen").innerHTML=count;
+    if(guess==ans){
+        alert(`${guess} is the correct guess.You took ${guesses} guesses.`);
+    }
+    else if(guess>ans){
+        alert(`Too Large!`);
+    }
+    else if(guess<ans){
+        alert(`Too Small!`);
+    }
+
 }
