@@ -1,19 +1,28 @@
-let count=0;
+const myDiv=document.getElementById("myBox");
+window.addEventListener("keydown",move);
 
-document.getElementById("decrease").onclick=function(){
-    count-=1;
-    Number(count);
-    document.getElementById("mainscreen").innerHTML=count;
-}
+let x=0;
+let y=0;
 
-document.getElementById("reset").onclick=function(){
-    count=0;
-    Number(count);
-    document.getElementById("mainscreen").innerHTML=count;
-}
 
-document.getElementById("increase").onclick=function(){
-    count+=1;
-    Number(count);
-    document.getElementById("mainscreen").innerHTML=count;
+
+function move(event){
+    switch(event.key){
+        case "ArrowDown":
+            y+=5;
+            myDiv.style.top=y+"px";
+            break;
+        case "ArrowUp":
+            y-=5;
+            myDiv.style.top=y+"px";
+            break;
+        case "ArrowRight":
+            x+=5;
+            myDiv.style.left=x+"px";
+            break;
+        case "ArrowLeft":
+            x-=5;
+            myDiv.style.left=x+"px";
+            break;
+    }
 }
