@@ -1,19 +1,29 @@
-let count=0;
+const myClock=document.getElementById("myLabel")
 
-document.getElementById("decrease").onclick=function(){
-    count-=1;
-    Number(count);
-    document.getElementById("mainscreen").innerHTML=count;
+
+update();
+setInterval(update,1000)
+function update(){
+    let date=new Date();
+    myClock.innerHTML=format(date);
+
+    function format(date){
+        let hours=date.getHours();
+        let minutes=date.getMinutes();
+        let seconds=date.getSeconds();
+        let amorpm=hours>12 ? "Pm":"Am";
+
+        hours=(hours%12) || 12;
+
+        hours=formatZeros(hours);
+        minutes=formatZeros(minutes);
+        seconds=formatZeros(seconds);
+
+        return `${hours}:${minutes}:${seconds} ${amorpm}`;
+    }
 }
 
-document.getElementById("reset").onclick=function(){
-    count=0;
-    Number(count);
-    document.getElementById("mainscreen").innerHTML=count;
-}
-
-document.getElementById("increase").onclick=function(){
-    count+=1;
-    Number(count);
-    document.getElementById("mainscreen").innerHTML=count;
+function formatZeros(element){
+    element=element.toString();
+    return element.length<2 ? '0'+element:element;
 }

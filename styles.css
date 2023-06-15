@@ -1,9 +1,10 @@
-#mainscreen{
-    display: block;
+#clock{
     text-align: center;
-    font-size: 50px;
-}
-
-#buttons{
-    text-align: center;
+    color: rebeccapurple;
+    block-size: auto;
+    font-size: 40px;
+    margin-top: 22%;
+    background-color: black;
+    margin-left:35%;
+    margin-right: 35%;
 }
