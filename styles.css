@@ -1,9 +1,25 @@
-#mainscreen{
-    display: block;
+#gameContainer{
     text-align: center;
+}
+#gameBoard{
+    border: 3px solid;
+}
+#score{
+    font-family: cursive;
     font-size: 50px;
 }
-
-#buttons{
-    text-align: center;
+#resetBtn{
+    border: 2px solid black;
+    border-radius: 15%;
+    font-family: cursive;
+    font-size: 22px;
+    width: 100px;
+    height: 50px;
+    cursor: pointer;
+    background-color: red;
+    color: white;
+}
+#resetBtn:hover{
+    background-color: #ff645c;
+    color: white;
 }
